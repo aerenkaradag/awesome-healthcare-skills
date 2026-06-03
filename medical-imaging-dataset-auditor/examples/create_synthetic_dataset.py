@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+"""Create a small synthetic medical imaging dataset for audit examples.
+
+The generated files are dummy images only. They contain no real patient data and
+are intended solely to demonstrate dataset-quality checks.
+"""
+
+from __future__ import annotations
+
+import argparse
+import shutil
+from pathlib import Path
+
+import pandas as pd
+from PIL import Image, ImageDraw
+
+
+CLASSES = ("normal", "referable")
+SPLITS = ("train", "val", "test")
+
+
+def make_image(path: Path, color: tuple[int, int, int], text: str, size: tuple[int, int] = (96, 96)) -> None:
+    """Create a simple synthetic RGB image."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    image = Image.new("RGB", size, color=color)
+    draw = ImageDraw.Draw(image)
+    draw.text((8, 40), text, fill=(255, 255, 255))
+    image.save(path)
+
+
+def build_dataset(output_dir: Path) -> Path:
+    """Create the synthetic dataset and return the metadata CSV path."""
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    records: list[dict[str, str]] = []
+
+    # Intentional class imbalance: many normal examples and few referable examples.
+    plan = [
+        ("train", "normal", "P001", "left", "FundusCam-A", "Site-A", "2024-01-02", (40, 90, 40)),
+        ("train", "normal", "P002", "right", "FundusCam-A", "Site-A", "2024-01-03", (50, 100, 50)),
+        ("train", "normal", "P003", "left", "FundusCam-A", "Site-A", "2024-01-04", (60, 110, 60)),
+        ("train", "normal", "P004", "right", "FundusCam-B", "Site-B", "2024-01-05", (70, 120, 70)),
+        ("train", "normal", "P005", "left", "FundusCam-B", "Site-B", "2024-01-06", (80, 130, 80)),
+        ("train", "referable", "P006", "right", "FundusCam-B", "Site-B", "2024-01-07", (140, 40, 40)),
+        ("val", "normal", "P007", "left", "FundusCam-A", "Site-A", "2024-02-01", (40, 40, 120)),
+        ("val", "normal", "P008", "right", "FundusCam-A", "Site-A", "2024-02-02", (50, 50, 130)),
+        ("test", "normal", "P009", "left", "FundusCam-C", "Site-C", "2024-03-01", (40, 120, 120)),
+        # Intentional patient leakage: P006 also appears in train.
+        ("test", "referable", "P006", "left", "FundusCam-C", "Site-C", "2024-03-02", (140, 40, 40)),
+    ]
+
+    duplicate_source: Path | None = None
+    for index, (split, label, patient_id, laterality, device, site, date, color) in enumerate(plan, start=1):
+        filename = f"{patient_id}_{laterality}_{label}_{index:03d}.png"
+        relative_path = Path(split) / label / filename
+        image_path = output_dir / relative_path
+        make_image(image_path, color, f"{label[:3]} {index}")
+        if split == "train" and label == "referable":
+            duplicate_source = image_path
+        records.append(
+            {
+                "image_path": relative_path.as_posix(),
+                "split": split,
+                "label": label,
+                "patient_id": patient_id,
+                "device": device,
+                "site": site,
+                "laterality": laterality,
+                "acquisition_date": date,
+                "synthetic_note": "dummy image; no real patient data",
+            }
+        )
+
+    # Intentional exact duplicate across splits with a new filename.
+    assert duplicate_source is not None
+    duplicate_relative = Path("test") / "referable" / "P010_right_referable_DUPLICATE_OF_TRAIN.png"
+    duplicate_path = output_dir / duplicate_relative
+    duplicate_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(duplicate_source, duplicate_path)
+    records.append(
+        {
+            "image_path": duplicate_relative.as_posix(),
+            "split": "test",
+            "label": "referable",
+            "patient_id": "P010",
+            "device": "FundusCam-C",
+            "site": "Site-C",
+            "laterality": "right",
+            "acquisition_date": "2024-03-03",
+            "synthetic_note": "intentional exact duplicate across splits",
+        }
+    )
+
+    metadata_path = output_dir / "metadata.csv"
+    pd.DataFrame(records).to_csv(metadata_path, index=False)
+    return metadata_path
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Create a synthetic medical imaging dataset for audit examples.")
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path(__file__).resolve().parent / "synthetic_dataset",
+        help="Directory where the synthetic dataset should be written.",
+    )
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    metadata_path = build_dataset(args.output_dir)
+    print(f"Created synthetic dataset: {args.output_dir}")
+    print(f"Created metadata CSV: {metadata_path}")
+
+
+if __name__ == "__main__":
+    main()
