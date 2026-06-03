@@ -1,0 +1,61 @@
+{
+  "model_name": "Example Diabetic Retinopathy Classifier",
+  "model_version": "0.3.1-demo",
+  "intended_use": "Assist trained clinicians by flagging retinal fundus images that may warrant review for referable diabetic retinopathy in a retrospective research workflow.",
+  "intended_users": ["Ophthalmologists", "retina screening program reviewers", "health AI researchers"],
+  "deployment_context": "Retrospective evaluation only; not approved for autonomous clinical use.",
+  "dataset": {
+    "name": "Synthetic Retinal Screening Validation Set",
+    "description": "Synthetic example dataset for demonstrating report generation. Not real patient data.",
+    "collection_period": "2024-01-01 to 2024-12-31",
+    "sources": ["Example Hospital A imaging archive"],
+    "n_patients": 1200,
+    "n_studies": 1800,
+    "positive_cases": 180,
+    "negative_cases": 1620,
+    "prevalence": 0.10,
+    "inclusion_criteria": "Adults with gradable retinal fundus images in the synthetic validation export.",
+    "exclusion_criteria": "Ungradable images and records missing synthetic reference labels.",
+    "ground_truth": "Synthetic expert-adjudicated image label provided for example purposes."
+  },
+  "evaluation": {
+    "split": "Patient-level held-out test split",
+    "threshold": 0.42,
+    "primary_endpoint": "Sensitivity for referable diabetic retinopathy at the selected operating threshold",
+    "secondary_endpoints": ["Specificity", "PPV", "NPV", "AUROC", "AUPRC", "calibration"]
+  },
+  "metrics": {
+    "sensitivity": 0.922,
+    "specificity": 0.861,
+    "ppv": 0.424,
+    "npv": 0.990,
+    "auroc": 0.947,
+    "auprc": 0.712,
+    "f1_score": 0.581,
+    "accuracy": 0.867,
+    "brier_score": 0.071,
+    "confidence_intervals": {
+      "sensitivity": [0.872, 0.957],
+      "specificity": [0.844, 0.878],
+      "auroc": [0.929, 0.964]
+    }
+  },
+  "subgroups": [
+    {"name": "Age < 65", "n": 980, "sensitivity": 0.914, "specificity": 0.868},
+    {"name": "Age >= 65", "n": 820, "sensitivity": 0.935, "specificity": 0.852},
+    {"name": "Camera Type A", "n": 1100, "sensitivity": 0.930, "specificity": 0.872},
+    {"name": "Camera Type B", "n": 700, "sensitivity": 0.904, "specificity": 0.840}
+  ],
+  "limitations": [
+    "Synthetic example only; not real-world validation evidence.",
+    "No external validation dataset was provided.",
+    "No prospective workflow evaluation was performed.",
+    "Subgroup sample sizes may be insufficient for definitive fairness conclusions."
+  ],
+  "external_validation": null,
+  "baseline_comparison": null,
+  "known_failure_modes": [
+    "Low image quality may increase false positives or false negatives.",
+    "Performance may vary across camera vendors and acquisition protocols."
+  ]
+}
