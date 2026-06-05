@@ -1,0 +1,12 @@
+# Normalize line endings to LF for text files so the deterministic example
+# generator produces byte-identical output across platforms (including CI).
+* text=auto eol=lf
+
+# Generated synthetic example fixtures must stay LF to match generator output.
+examples/*.csv text eol=lf
+examples/*.json text eol=lf
+
+# Scripts.
+*.py text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
