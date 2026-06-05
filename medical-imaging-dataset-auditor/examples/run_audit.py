@@ -21,10 +21,26 @@ from PIL import Image, UnidentifiedImageError
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".tif", ".tiff"}
 SPLIT_NAMES = {"train", "training", "val", "valid", "validation", "test", "holdout", "external"}
 LABEL_TERMS = {"normal", "referable", "urgent", "disease", "positive", "negative", "case", "control"}
+IMAGE_COLUMNS = ["image_path", "absolute_path", "split_from_path", "label_from_path", "filename", "extension"]
+INSPECTION_COLUMNS = [
+    "image_path",
+    "width",
+    "height",
+    "mode",
+    "format",
+    "file_size_bytes",
+    "sha256",
+    "is_corrupted",
+    "error",
+]
+DUPLICATE_COLUMNS = ["duplicate_type", "sha256", "splits", "image_paths", "cross_split", "count"]
+SPLIT_REPORT_COLUMNS = ["severity", "check", "identifier_hash", "splits", "count", "recommendation"]
 
 
 def discover_images(dataset_root: Path) -> pd.DataFrame:
     rows: list[dict[str, str]] = []
+    if not dataset_root.exists():
+        return pd.DataFrame(columns=IMAGE_COLUMNS)
     for path in sorted(dataset_root.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in IMAGE_EXTENSIONS:
             continue
@@ -49,7 +65,7 @@ def discover_images(dataset_root: Path) -> pd.DataFrame:
                 "extension": path.suffix.lower(),
             }
         )
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows, columns=IMAGE_COLUMNS)
 
 
 def load_metadata(metadata_path: Path | None) -> pd.DataFrame:
@@ -82,6 +98,8 @@ def sha256_file(path: Path, chunk_size: int = 1024 * 1024) -> str:
 
 def inspect_images(rows: pd.DataFrame) -> pd.DataFrame:
     inspected: list[dict[str, object]] = []
+    if rows.empty:
+        return pd.DataFrame(columns=INSPECTION_COLUMNS)
     for row in rows.to_dict("records"):
         path = Path(row["absolute_path"])
         record = {
@@ -106,10 +124,12 @@ def inspect_images(rows: pd.DataFrame) -> pd.DataFrame:
             record["is_corrupted"] = True
             record["error"] = type(exc).__name__
         inspected.append(record)
-    return pd.DataFrame(inspected)
+    return pd.DataFrame(inspected, columns=INSPECTION_COLUMNS)
 
 
 def class_distribution(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty:
+        return pd.DataFrame(columns=["split", "label", "count", "percent_within_split"])
     counts = df.groupby(["split", "label"], dropna=False).size().reset_index(name="count")
     totals = counts.groupby("split")["count"].transform("sum")
     counts["percent_within_split"] = (counts["count"] / totals * 100).round(2)
@@ -146,7 +166,7 @@ def duplicate_candidates(df: pd.DataFrame) -> pd.DataFrame:
                 "count": len(group),
             }
         )
-    return pd.DataFrame(candidates)
+    return pd.DataFrame(candidates, columns=DUPLICATE_COLUMNS)
 
 
 def split_integrity(df: pd.DataFrame) -> pd.DataFrame:
@@ -167,7 +187,7 @@ def split_integrity(df: pd.DataFrame) -> pd.DataFrame:
                         "recommendation": f"Keep each {column} in only one split or document why overlap is intended.",
                     }
                 )
-    return pd.DataFrame(findings)
+    return pd.DataFrame(findings, columns=SPLIT_REPORT_COLUMNS)
 
 
 def metadata_leakage_findings(df: pd.DataFrame) -> list[dict[str, str]]:

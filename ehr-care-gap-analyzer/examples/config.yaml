@@ -1,0 +1,6 @@
+reference_date: 2024-06-01
+hba1c_review_threshold: 8.0
+egfr_review_threshold: 45
+ldl_review_threshold: 130
+followup_lookback_days: 365
+eye_exam_lookback_days: 730

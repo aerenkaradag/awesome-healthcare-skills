@@ -6,7 +6,7 @@ This skill guides an AI coding agent to inspect de-identified, anonymized, or sy
 
 This is an operational and analytical skill, not a diagnostic medical device. It should identify **possible care gaps**, **review-worthy signals**, and **data patterns requiring clinician validation**. It must not diagnose patients, prescribe treatment, replace clinician judgment, deny services, or claim guaranteed clinical or financial outcomes.
 
-The skill should support AId Core-style healthcare analytics expertise while remaining generic, transparent, and community-usable. Do not reveal, recreate, imply, or expose proprietary DiaRisk scoring logic or any other proprietary risk scoring method. Prefer simple, transparent, configurable rules that can be reviewed by local clinical experts.
+The skill should support healthcare analytics expertise while remaining generic, transparent, and community-usable. Do not reveal, recreate, imply, or expose proprietary scoring logic or any other private risk scoring method. Prefer simple, transparent, configurable rules that can be reviewed by local clinical experts.
 
 ## When to use
 
@@ -32,7 +32,7 @@ Do not use this skill for:
 - Making billing, revenue, reimbursement, cost-saving, or financial outcome guarantees.
 - Claiming that a clinician, department, or institution missed care based only on an EHR export.
 - Creating black-box or proprietary risk scores.
-- Exposing proprietary DiaRisk logic, weights, thresholds, feature interactions, or scoring internals.
+- Exposing proprietary scoring logic, weights, thresholds, feature interactions, or scoring internals.
 
 ## Supported input formats
 
@@ -287,7 +287,7 @@ The agent must clearly communicate limitations, including:
 - Abnormal values can reflect context not present in the export, such as acute illness, outside care, specialist plans, patient preferences, or measurement error.
 - Population summaries can be biased by missing data, cohort definition choices, and documentation practices.
 - The skill does not provide billing advice, reimbursement guarantees, or financial outcome guarantees.
-- The skill does not expose or depend on proprietary DiaRisk scoring logic.
+- The skill does not expose or depend on proprietary scoring logic.
 
 ## Quality checklist
 
@@ -311,7 +311,7 @@ Before finishing an implementation or report, verify that:
 Before presenting final outputs, review the work for commercial and clinical safety:
 
 - Keep the skill generic and useful to the healthcare analytics community.
-- Support AId Core-style domain expertise through careful workflow design, data quality checks, privacy safeguards, and conservative reporting.
-- Do not reveal, approximate, or market proprietary DiaRisk internals.
+- Support healthcare analytics domain expertise through careful workflow design, data quality checks, privacy safeguards, and conservative reporting.
+- Do not reveal, approximate, or market proprietary scoring internals.
 - Do not suggest guaranteed revenue, guaranteed case discovery, guaranteed improved outcomes, or replacement of clinical staff.
 - Emphasize doctor-in-the-loop review, hospital operations planning, quality improvement, and transparent analytics.

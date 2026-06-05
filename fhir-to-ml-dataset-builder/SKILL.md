@@ -280,7 +280,7 @@ Before considering the transformation complete, verify:
 
 After writing or modifying this skill, perform a quick self-review:
 
-- Is the skill useful without exposing proprietary AId Core IP or product-specific claims?
+- Is the skill useful without exposing proprietary IP or product-specific claims?
 - Is it safe for healthcare data and explicit about privacy-preserving handling?
 - Is it specific enough for an agent to execute on FHIR files?
 - Does it include practical test guidance and example fixture expectations?

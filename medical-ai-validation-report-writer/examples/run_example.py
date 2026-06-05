@@ -10,12 +10,12 @@ from __future__ import annotations
 
 import csv
 import json
-from datetime import date
 from pathlib import Path
 from typing import Any
 
 HERE = Path(__file__).resolve().parent
 OUTPUT_DIR = HERE / "output"
+GENERATED_ON = "2024-06-01"
 
 
 def fmt(value: Any) -> str:
@@ -129,7 +129,7 @@ def build_report(metrics_path: Path, confusion_path: Path) -> str:
 
     return f"""# Medical AI Validation Report
 
-Generated on: {date.today().isoformat()}
+Generated on: {GENERATED_ON}
 
 ## Executive summary
 

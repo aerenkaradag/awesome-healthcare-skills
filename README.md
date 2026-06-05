@@ -63,7 +63,7 @@ These boundaries apply across the repository:
 ## Repository structure
 
 ```text
-awesome-healthcare-ai-skills/
+awesome-healthcare-skills/
 ├── README.md
 ├── docs/
 │   ├── healthcare-ai-best-practices.md
@@ -83,6 +83,8 @@ awesome-healthcare-ai-skills/
 ## How to use
 
 Each skill folder contains a `SKILL.md` file. A `SKILL.md` is an agent-readable instruction document that describes when to use the skill, what inputs to expect, what outputs to produce, and which safety boundaries apply.
+
+Python examples use the dependencies listed in `requirements.txt`. Install them in your local environment before running examples that use pandas or Pillow.
 
 A typical tool-agnostic workflow is:
 
@@ -111,7 +113,7 @@ Before opening a pull request, check that examples do not contain PHI or institu
 
 ## License
 
-MIT License unless otherwise specified.
+MIT License unless otherwise specified. See `LICENSE`.
 
 ## Maintainer note
 
