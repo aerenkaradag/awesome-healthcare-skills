@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use these skills, please cite this repository."
+title: "Awesome Healthcare Skills"
+abstract: "Open-source AI agent skills for safer and more practical healthcare AI workflows."
+type: software
+authors:
+  - name: "Awesome Healthcare Skills contributors"
+url: "https://github.com/aerenkaradag/awesome-healthcare-skills"
+repository-code: "https://github.com/aerenkaradag/awesome-healthcare-skills"
+license: MIT
+version: "0.1.0"
+keywords:
+  - healthcare
+  - healthcare-ai
+  - fhir
+  - ehr
+  - medical-imaging
+  - ai-agent-skills

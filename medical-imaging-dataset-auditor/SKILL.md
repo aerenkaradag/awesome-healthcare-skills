@@ -196,14 +196,14 @@ For fundus, OCT, and FFA datasets, the agent should pay special attention to:
 
 When generating files, save outputs in a user-specified audit directory or a default directory such as `dataset_audit_output/`. Useful outputs include:
 
-- `dataset_audit_report.md` — executive summary, issue table, dataset structure, key risks, assumptions, and recommended fixes.
-- `class_distribution.csv` — counts and percentages by split, class, and label source.
-- `split_integrity_report.csv` — patient, study, file, and split overlap findings.
-- `duplicate_candidates.csv` — exact hash duplicates, same-filename duplicates, and approximate duplicate candidates when available.
-- `metadata_leakage_report.md` — suspicious metadata columns, file-name leakage, direct identifier concerns, and target-leakage risks.
-- `domain_shift_summary.md` — site, device, scanner, camera, modality, protocol, date, and resolution distribution summaries.
-- `recommended_split_strategy.md` — patient/group-level splitting plan and stratification recommendations.
-- `data_card.md` — concise dataset documentation, intended ML use, labels, sources, limitations, and known risks.
+- `dataset_audit_report.md`: executive summary, issue table, dataset structure, key risks, assumptions, and recommended fixes.
+- `class_distribution.csv`: counts and percentages by split, class, and label source.
+- `split_integrity_report.csv`: patient, study, file, and split overlap findings.
+- `duplicate_candidates.csv`: exact hash duplicates, same-filename duplicates, and approximate duplicate candidates when available.
+- `metadata_leakage_report.md`: suspicious metadata columns, file-name leakage, direct identifier concerns, and target-leakage risks.
+- `domain_shift_summary.md`: site, device, scanner, camera, modality, protocol, date, and resolution distribution summaries.
+- `recommended_split_strategy.md`: patient/group-level splitting plan and stratification recommendations.
+- `data_card.md`: concise dataset documentation, intended ML use, labels, sources, limitations, and known risks.
 
 ## Code-generation instructions
 
@@ -241,11 +241,11 @@ Warn users that duplicate and near-duplicate detection may be approximate. Exact
 
 Reports should classify issues by severity:
 
-- **Critical** — issue can directly invalidate evaluation or create major leakage.
-- **High** — issue can materially inflate or destabilize model performance.
-- **Medium** — issue creates meaningful uncertainty or documentation gaps.
-- **Low** — issue is worth fixing but unlikely to invalidate results alone.
-- **Informational** — observation, assumption, or non-blocking documentation item.
+- **Critical**: issue can directly invalidate evaluation or create major leakage.
+- **High**: issue can materially inflate or destabilize model performance.
+- **Medium**: issue creates meaningful uncertainty or documentation gaps.
+- **Low**: issue is worth fixing but unlikely to invalidate results alone.
+- **Informational**: observation, assumption, or non-blocking documentation item.
 
 Examples:
 

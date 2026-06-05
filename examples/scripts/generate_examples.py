@@ -85,14 +85,6 @@ MEDICATION_CODES = {
     "atorvastatin": ("617312", "Atorvastatin 20 MG Oral Tablet"),
 }
 
-# Fake, clearly-synthetic given/family name pools (NOT real-person data; only
-# used inside the FHIR Patient.name to keep the resource structurally valid).
-FAKE_GIVEN = ["Synth", "Demo", "Test", "Sample", "Mock", "Example", "Fixture"]
-FAKE_FAMILY = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot",
-               "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike",
-               "November", "Oscar"]
-
-
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
@@ -229,17 +221,14 @@ def build_fhir_bundle(n_patients: int = 10) -> dict:
         birth_year = REFERENCE_DATE.year - age
         birth_date = date(birth_year, RNG.randint(1, 12), RNG.randint(1, 28))
 
-        given = RNG.choice(FAKE_GIVEN)
-        family = RNG.choice(FAKE_FAMILY)
-
         entries.append({
             "resource": {
                 "resourceType": "Patient",
                 "id": pid,
                 "active": True,
-                # Clearly-synthetic placeholder name; not a real person.
-                "name": [{"use": "official", "family": family,
-                          "given": [given]}],
+                # No name is emitted on purpose: this fixture carries no
+                # personal identifiers, only a synthetic id, gender, and
+                # birth date for age-based feature extraction.
                 "gender": sex,
                 "birthDate": iso(birth_date),
             }

@@ -1,3 +1,6 @@
 # Python
 __pycache__/
 *.py[cod]
+
+# Tooling / local cache (not part of the project)
+.lean-ctx/

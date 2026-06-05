@@ -18,23 +18,25 @@ demonstrate the healthcare AI skills in this repository.
 | `diabetes-cohort.csv` | `ehr-care-gap-analyzer` | A tabular diabetes cohort with labs, dates, diagnoses, medications, and follow-up fields. |
 | `validation-results.csv` | `medical-ai-validation-report-writer` | Synthetic model predictions, labels, probabilities, and subgroup fields. |
 | `scripts/generate_examples.py` | (reproducibility) | Regenerates all three files deterministically. |
+| `scripts/validate_examples.py` | (quality gate) | Validates structure, required columns, ISO dates, PHI safety, and row counts. |
 
 ### 1. `synthetic-fhir-bundle.json`
 
 A FHIR R4 `Bundle` (`type: transaction`) with 10 synthetic patients and a mix
 of resources:
 
-- `Patient` (fake placeholder names, synthetic IDs, birth dates, gender)
-- `Condition` — Type 2 diabetes (SNOMED `44054006`), hypertension
+- `Patient` (synthetic IDs, gender, birth date only; no name or contact
+  fields are stored)
+- `Condition`: Type 2 diabetes (SNOMED `44054006`), hypertension
   (`38341003`), chronic kidney disease (`709044004`), hyperlipidemia, diabetic
   neuropathy
-- `Observation` — HbA1c (LOINC `4548-4`), eGFR (`33914-3`), LDL (`18262-6`),
+- `Observation`: HbA1c (LOINC `4548-4`), eGFR (`33914-3`), LDL (`18262-6`),
   creatinine (`2160-0`), systolic/diastolic blood pressure (`8480-6` /
   `8462-4`)
-- `MedicationRequest` — metformin, insulin glargine, lisinopril, atorvastatin
+- `MedicationRequest`: metformin, insulin glargine, lisinopril, atorvastatin
   (RxNorm coded)
-- `Encounter` — ambulatory encounters with start/end periods
-- `Procedure` — a screening procedure for some patients
+- `Encounter`: ambulatory encounters with start/end periods
+- `Procedure`: a screening procedure for some patients
 
 Coding systems used: **SNOMED CT** for conditions, **LOINC** for observations,
 **RxNorm** for medications. The bundle is structurally close to valid FHIR R4
@@ -109,10 +111,10 @@ Feed `diabetes-cohort.csv` to the analyzer with configurable thresholds and
 lookback windows. Expected outputs are conservative, review-oriented signals,
 for example:
 
-- `care_gap_patient_flags.csv` — per-patient **possible** care-gap flags such
+- `care_gap_patient_flags.csv`: per-patient **possible** care-gap flags such
   as "HbA1c above configured threshold and no recent endocrinology follow-up"
   or "eGFR below threshold and no nephrology visit found in lookback window"
-- `care_gap_population_summary.csv` — aggregate counts per category
+- `care_gap_population_summary.csv`: aggregate counts per category
 - A Markdown report using cautious language (`possible care gap`,
   `requires clinician validation`)
 
@@ -140,6 +142,13 @@ The files are produced deterministically by the bundled script:
 python scripts/generate_examples.py
 ```
 
+You can also run it from the repository root; the script always writes to the
+`examples/` folder regardless of the current working directory:
+
+```bash
+python examples/scripts/generate_examples.py
+```
+
 Notes:
 
 - A fixed random seed makes every run byte-for-byte identical.
@@ -157,6 +166,36 @@ Notes:
 
   The CSV files are always generated locally so the care-gap and validation
   workflows stay fully self-contained.
+
+## Validating the examples
+
+A validation script checks that the example files are present, well-formed, and
+safe to publish:
+
+```bash
+python scripts/validate_examples.py
+```
+
+Or from the repository root:
+
+```bash
+python examples/scripts/validate_examples.py
+```
+
+The validator confirms that:
+
+- The CSV files load and the JSON file parses.
+- Each CSV contains its required columns.
+- The FHIR bundle is a `Bundle` with the expected resource types
+  (`Patient`, `Encounter`, `Condition`, `Observation`, `MedicationRequest`).
+- No obvious PHI fields are present (email, phone, address, name, and similar).
+- Date values are ISO-like (`YYYY-MM-DD` or full ISO datetimes).
+- Row counts are within the expected ranges (cohort 20-50, validation 100-300,
+  FHIR patients 5-15).
+
+It prints a short summary and exits with status `0` when all checks pass and a
+non-zero status when any check fails, so it can be used in continuous
+integration.
 
 ## Disclaimer
 

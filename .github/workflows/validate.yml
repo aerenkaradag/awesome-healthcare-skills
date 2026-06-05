@@ -1,0 +1,44 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-examples:
+    name: Validate synthetic examples
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate example data files
+        run: python examples/scripts/validate_examples.py
+
+      - name: Regenerate examples and confirm they are unchanged
+        run: |
+          python examples/scripts/generate_examples.py
+          git diff --exit-code -- examples/diabetes-cohort.csv examples/validation-results.csv examples/synthetic-fhir-bundle.json
+
+  check-markdown-links:
+    name: Check relative Markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Verify relative links resolve
+        run: python .github/scripts/check_markdown_links.py

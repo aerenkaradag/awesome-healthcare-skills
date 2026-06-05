@@ -8,15 +8,6 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-001",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "India",
-            "given": [
-              "Mock"
-            ]
-          }
-        ],
         "gender": "male",
         "birthDate": "1957-07-13"
       }
@@ -58,8 +49,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "onsetDateTime": "2016-07-31T09:00:00+00:00",
-        "recordedDate": "2016-07-31"
+        "onsetDateTime": "2016-08-02T09:00:00+00:00",
+        "recordedDate": "2016-08-02"
       }
     },
     {
@@ -99,14 +90,14 @@
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "onsetDateTime": "2022-01-26T09:00:00+00:00",
-        "recordedDate": "2022-01-26"
+        "onsetDateTime": "2020-03-15T09:00:00+00:00",
+        "recordedDate": "2020-03-15"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-001-lipid",
+        "id": "cond-001-neuro",
         "clinicalStatus": {
           "coding": [
             {
@@ -131,17 +122,17 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "55822004",
-              "display": "Hyperlipidemia"
+              "code": "42345005",
+              "display": "Diabetic neuropathy"
             }
           ],
-          "text": "Hyperlipidemia"
+          "text": "Diabetic neuropathy"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "onsetDateTime": "2020-08-20T09:00:00+00:00",
-        "recordedDate": "2020-08-20"
+        "onsetDateTime": "2022-07-12T09:00:00+00:00",
+        "recordedDate": "2022-07-12"
       }
     },
     {
@@ -174,9 +165,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "effectiveDateTime": "2023-07-12T09:00:00+00:00",
+        "effectiveDateTime": "2023-07-31T09:00:00+00:00",
         "valueQuantity": {
-          "value": 9.7,
+          "value": 10.2,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -213,9 +204,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "effectiveDateTime": "2023-11-14T09:00:00+00:00",
+        "effectiveDateTime": "2023-05-29T09:00:00+00:00",
         "valueQuantity": {
-          "value": 83.6,
+          "value": 101.5,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -252,9 +243,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "effectiveDateTime": "2023-11-28T09:00:00+00:00",
+        "effectiveDateTime": "2022-11-28T09:00:00+00:00",
         "valueQuantity": {
-          "value": 177.1,
+          "value": 126.3,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -291,9 +282,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "effectiveDateTime": "2023-11-14T09:00:00+00:00",
+        "effectiveDateTime": "2023-05-29T09:00:00+00:00",
         "valueQuantity": {
-          "value": 1.03,
+          "value": 0.9,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -330,7 +321,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "effectiveDateTime": "2024-05-07T09:00:00+00:00",
+        "effectiveDateTime": "2023-06-18T09:00:00+00:00",
         "valueQuantity": {
           "value": 119,
           "unit": "mmHg",
@@ -369,9 +360,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-001"
         },
-        "effectiveDateTime": "2024-05-07T09:00:00+00:00",
+        "effectiveDateTime": "2023-06-18T09:00:00+00:00",
         "valueQuantity": {
-          "value": 82,
+          "value": 70,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -564,15 +555,6 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-002",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "Charlie",
-            "given": [
-              "Example"
-            ]
-          }
-        ],
         "gender": "male",
         "birthDate": "1947-05-11"
       }
@@ -614,49 +596,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "onsetDateTime": "2023-03-14T09:00:00+00:00",
-        "recordedDate": "2023-03-14"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-002-htn",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ],
-          "text": "Active"
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed",
-              "display": "Confirmed"
-            }
-          ],
-          "text": "Confirmed"
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "38341003",
-              "display": "Hypertensive disorder, systemic arterial"
-            }
-          ],
-          "text": "Hypertensive disorder, systemic arterial"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-002"
-        },
-        "onsetDateTime": "2017-02-21T09:00:00+00:00",
-        "recordedDate": "2017-02-21"
+        "onsetDateTime": "2016-02-22T09:00:00+00:00",
+        "recordedDate": "2016-02-22"
       }
     },
     {
@@ -696,8 +637,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "onsetDateTime": "2019-03-03T09:00:00+00:00",
-        "recordedDate": "2019-03-03"
+        "onsetDateTime": "2021-11-04T09:00:00+00:00",
+        "recordedDate": "2021-11-04"
       }
     },
     {
@@ -730,7 +671,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "effectiveDateTime": "2023-07-14T09:00:00+00:00",
+        "effectiveDateTime": "2023-05-22T09:00:00+00:00",
         "valueQuantity": {
           "value": 10.0,
           "unit": "%",
@@ -769,9 +710,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "effectiveDateTime": "2023-09-04T09:00:00+00:00",
+        "effectiveDateTime": "2023-05-20T09:00:00+00:00",
         "valueQuantity": {
-          "value": 99.2,
+          "value": 71.3,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -808,9 +749,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "effectiveDateTime": "2023-06-19T09:00:00+00:00",
+        "effectiveDateTime": "2022-12-26T09:00:00+00:00",
         "valueQuantity": {
-          "value": 64.1,
+          "value": 180.9,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -847,9 +788,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "effectiveDateTime": "2023-09-04T09:00:00+00:00",
+        "effectiveDateTime": "2023-05-20T09:00:00+00:00",
         "valueQuantity": {
-          "value": 0.9,
+          "value": 1.27,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -886,9 +827,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "effectiveDateTime": "2023-12-13T09:00:00+00:00",
+        "effectiveDateTime": "2023-12-10T09:00:00+00:00",
         "valueQuantity": {
-          "value": 125,
+          "value": 111,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -925,13 +866,35 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "effectiveDateTime": "2023-12-13T09:00:00+00:00",
+        "effectiveDateTime": "2023-12-10T09:00:00+00:00",
         "valueQuantity": {
-          "value": 78,
+          "value": 90,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
         }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-002-metformin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "Metformin hydrochloride 500 MG Oral Tablet"
+            }
+          ],
+          "text": "Metformin hydrochloride 500 MG Oral Tablet"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-002"
+        },
+        "authoredOn": "2024-01-01"
       }
     },
     {
@@ -953,7 +916,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "authoredOn": "2023-08-19"
+        "authoredOn": "2023-12-14"
       }
     },
     {
@@ -975,13 +938,75 @@
         "subject": {
           "reference": "Patient/synthetic-patient-002"
         },
-        "authoredOn": "2023-08-24"
+        "authoredOn": "2022-11-10"
       }
     },
     {
       "resource": {
         "resourceType": "Encounter",
         "id": "enc-002-0",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Encounter for check up"
+              }
+            ],
+            "text": "Encounter for check up"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/synthetic-patient-002"
+        },
+        "period": {
+          "start": "2023-09-08T09:00:00+00:00",
+          "end": "2023-09-08T10:00:00+00:00"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-002-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Encounter for check up"
+              }
+            ],
+            "text": "Encounter for check up"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/synthetic-patient-002"
+        },
+        "period": {
+          "start": "2024-02-29T09:00:00+00:00",
+          "end": "2024-02-29T10:00:00+00:00"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-002-2",
         "status": "finished",
         "class": {
           "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
@@ -1035,15 +1060,6 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-003",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "Lima",
-            "given": [
-              "Synth"
-            ]
-          }
-        ],
         "gender": "female",
         "birthDate": "1961-04-23"
       }
@@ -1085,14 +1101,14 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "onsetDateTime": "2016-06-06T09:00:00+00:00",
-        "recordedDate": "2016-06-06"
+        "onsetDateTime": "2022-10-06T09:00:00+00:00",
+        "recordedDate": "2022-10-06"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-003-htn",
+        "id": "cond-003-lipid",
         "clinicalStatus": {
           "coding": [
             {
@@ -1117,23 +1133,23 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "38341003",
-              "display": "Hypertensive disorder, systemic arterial"
+              "code": "55822004",
+              "display": "Hyperlipidemia"
             }
           ],
-          "text": "Hypertensive disorder, systemic arterial"
+          "text": "Hyperlipidemia"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "onsetDateTime": "2017-05-05T09:00:00+00:00",
-        "recordedDate": "2017-05-05"
+        "onsetDateTime": "2023-03-06T09:00:00+00:00",
+        "recordedDate": "2023-03-06"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-003-ckd",
+        "id": "cond-003-neuro",
         "clinicalStatus": {
           "coding": [
             {
@@ -1158,17 +1174,17 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "709044004",
-              "display": "Chronic kidney disease"
+              "code": "42345005",
+              "display": "Diabetic neuropathy"
             }
           ],
-          "text": "Chronic kidney disease"
+          "text": "Diabetic neuropathy"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "onsetDateTime": "2023-10-03T09:00:00+00:00",
-        "recordedDate": "2023-10-03"
+        "onsetDateTime": "2023-07-04T09:00:00+00:00",
+        "recordedDate": "2023-07-04"
       }
     },
     {
@@ -1201,9 +1217,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "effectiveDateTime": "2023-02-26T09:00:00+00:00",
+        "effectiveDateTime": "2023-11-29T09:00:00+00:00",
         "valueQuantity": {
-          "value": 7.0,
+          "value": 7.6,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -1240,9 +1256,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "effectiveDateTime": "2023-05-07T09:00:00+00:00",
+        "effectiveDateTime": "2024-01-24T09:00:00+00:00",
         "valueQuantity": {
-          "value": 35.1,
+          "value": 81.4,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -1279,9 +1295,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "effectiveDateTime": "2022-11-18T09:00:00+00:00",
+        "effectiveDateTime": "2023-12-03T09:00:00+00:00",
         "valueQuantity": {
-          "value": 189.4,
+          "value": 188.8,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -1318,9 +1334,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "effectiveDateTime": "2023-05-07T09:00:00+00:00",
+        "effectiveDateTime": "2024-01-24T09:00:00+00:00",
         "valueQuantity": {
-          "value": 2.0,
+          "value": 1.07,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -1357,9 +1373,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "effectiveDateTime": "2024-04-23T09:00:00+00:00",
+        "effectiveDateTime": "2023-06-07T09:00:00+00:00",
         "valueQuantity": {
-          "value": 140,
+          "value": 126,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -1396,9 +1412,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "effectiveDateTime": "2024-04-23T09:00:00+00:00",
+        "effectiveDateTime": "2023-06-07T09:00:00+00:00",
         "valueQuantity": {
-          "value": 84,
+          "value": 78,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -1424,51 +1440,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "authoredOn": "2023-07-20"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "med-003-insulin",
-        "status": "active",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "311041",
-              "display": "Insulin glargine 100 UNT/ML Injectable Solution"
-            }
-          ],
-          "text": "Insulin glargine 100 UNT/ML Injectable Solution"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-003"
-        },
-        "authoredOn": "2023-05-25"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "med-003-lisinopril",
-        "status": "active",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "314076",
-              "display": "Lisinopril 10 MG Oral Tablet"
-            }
-          ],
-          "text": "Lisinopril 10 MG Oral Tablet"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-003"
-        },
-        "authoredOn": "2023-04-30"
+        "authoredOn": "2023-02-07"
       }
     },
     {
@@ -1490,7 +1462,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-003"
         },
-        "authoredOn": "2023-10-12"
+        "authoredOn": "2024-02-04"
       }
     },
     {
@@ -1519,8 +1491,70 @@
           "reference": "Patient/synthetic-patient-003"
         },
         "period": {
-          "start": "2022-07-22T09:00:00+00:00",
-          "end": "2022-07-22T10:00:00+00:00"
+          "start": "2022-08-25T09:00:00+00:00",
+          "end": "2022-08-25T10:00:00+00:00"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-003-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Encounter for check up"
+              }
+            ],
+            "text": "Encounter for check up"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/synthetic-patient-003"
+        },
+        "period": {
+          "start": "2023-05-15T09:00:00+00:00",
+          "end": "2023-05-15T10:00:00+00:00"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-003-2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Encounter for check up"
+              }
+            ],
+            "text": "Encounter for check up"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/synthetic-patient-003"
+        },
+        "period": {
+          "start": "2023-01-09T09:00:00+00:00",
+          "end": "2023-01-09T10:00:00+00:00"
         }
       }
     },
@@ -1529,17 +1563,8 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-004",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "Mike",
-            "given": [
-              "Mock"
-            ]
-          }
-        ],
-        "gender": "female",
-        "birthDate": "1970-08-18"
+        "gender": "male",
+        "birthDate": "1945-10-22"
       }
     },
     {
@@ -1579,8 +1604,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "onsetDateTime": "2021-01-13T09:00:00+00:00",
-        "recordedDate": "2021-01-13"
+        "onsetDateTime": "2020-04-12T09:00:00+00:00",
+        "recordedDate": "2020-04-12"
       }
     },
     {
@@ -1620,14 +1645,14 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "onsetDateTime": "2017-08-03T09:00:00+00:00",
-        "recordedDate": "2017-08-03"
+        "onsetDateTime": "2018-01-28T09:00:00+00:00",
+        "recordedDate": "2018-01-28"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-004-lipid",
+        "id": "cond-004-neuro",
         "clinicalStatus": {
           "coding": [
             {
@@ -1652,17 +1677,17 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "55822004",
-              "display": "Hyperlipidemia"
+              "code": "42345005",
+              "display": "Diabetic neuropathy"
             }
           ],
-          "text": "Hyperlipidemia"
+          "text": "Diabetic neuropathy"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "onsetDateTime": "2018-04-17T09:00:00+00:00",
-        "recordedDate": "2018-04-17"
+        "onsetDateTime": "2021-02-20T09:00:00+00:00",
+        "recordedDate": "2021-02-20"
       }
     },
     {
@@ -1695,9 +1720,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "effectiveDateTime": "2023-03-11T09:00:00+00:00",
+        "effectiveDateTime": "2023-04-04T09:00:00+00:00",
         "valueQuantity": {
-          "value": 6.7,
+          "value": 11.3,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -1734,9 +1759,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "effectiveDateTime": "2023-10-14T09:00:00+00:00",
+        "effectiveDateTime": "2023-07-06T09:00:00+00:00",
         "valueQuantity": {
-          "value": 109.0,
+          "value": 108.3,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -1773,9 +1798,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "effectiveDateTime": "2023-07-22T09:00:00+00:00",
+        "effectiveDateTime": "2023-08-28T09:00:00+00:00",
         "valueQuantity": {
-          "value": 155.0,
+          "value": 187.6,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -1812,7 +1837,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "effectiveDateTime": "2023-10-14T09:00:00+00:00",
+        "effectiveDateTime": "2023-07-06T09:00:00+00:00",
         "valueQuantity": {
           "value": 0.9,
           "unit": "mg/dL",
@@ -1851,9 +1876,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "effectiveDateTime": "2023-06-09T09:00:00+00:00",
+        "effectiveDateTime": "2024-02-28T09:00:00+00:00",
         "valueQuantity": {
-          "value": 171,
+          "value": 149,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -1890,9 +1915,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "effectiveDateTime": "2023-06-09T09:00:00+00:00",
+        "effectiveDateTime": "2024-02-28T09:00:00+00:00",
         "valueQuantity": {
-          "value": 76,
+          "value": 83,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -1902,23 +1927,23 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "med-004-metformin",
+        "id": "med-004-insulin",
         "status": "active",
         "intent": "order",
         "medicationCodeableConcept": {
           "coding": [
             {
               "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "860975",
-              "display": "Metformin hydrochloride 500 MG Oral Tablet"
+              "code": "311041",
+              "display": "Insulin glargine 100 UNT/ML Injectable Solution"
             }
           ],
-          "text": "Metformin hydrochloride 500 MG Oral Tablet"
+          "text": "Insulin glargine 100 UNT/ML Injectable Solution"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "authoredOn": "2024-04-11"
+        "authoredOn": "2023-12-07"
       }
     },
     {
@@ -1940,29 +1965,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-004"
         },
-        "authoredOn": "2023-01-24"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "med-004-atorvastatin",
-        "status": "active",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "617312",
-              "display": "Atorvastatin 20 MG Oral Tablet"
-            }
-          ],
-          "text": "Atorvastatin 20 MG Oral Tablet"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-004"
-        },
-        "authoredOn": "2024-01-05"
+        "authoredOn": "2023-09-29"
       }
     },
     {
@@ -1991,70 +1994,8 @@
           "reference": "Patient/synthetic-patient-004"
         },
         "period": {
-          "start": "2022-09-20T09:00:00+00:00",
-          "end": "2022-09-20T10:00:00+00:00"
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "enc-004-1",
-        "status": "finished",
-        "class": {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-          "code": "AMB",
-          "display": "ambulatory"
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "185349003",
-                "display": "Encounter for check up"
-              }
-            ],
-            "text": "Encounter for check up"
-          }
-        ],
-        "subject": {
-          "reference": "Patient/synthetic-patient-004"
-        },
-        "period": {
-          "start": "2023-02-10T09:00:00+00:00",
-          "end": "2023-02-10T10:00:00+00:00"
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "enc-004-2",
-        "status": "finished",
-        "class": {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-          "code": "AMB",
-          "display": "ambulatory"
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "185349003",
-                "display": "Encounter for check up"
-              }
-            ],
-            "text": "Encounter for check up"
-          }
-        ],
-        "subject": {
-          "reference": "Patient/synthetic-patient-004"
-        },
-        "period": {
-          "start": "2023-10-16T09:00:00+00:00",
-          "end": "2023-10-16T10:00:00+00:00"
+          "start": "2023-12-06T09:00:00+00:00",
+          "end": "2023-12-06T10:00:00+00:00"
         }
       }
     },
@@ -2063,17 +2004,8 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-005",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "Bravo",
-            "given": [
-              "Mock"
-            ]
-          }
-        ],
-        "gender": "male",
-        "birthDate": "1950-04-25"
+        "gender": "female",
+        "birthDate": "1962-01-21"
       }
     },
     {
@@ -2113,14 +2045,14 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "onsetDateTime": "2016-01-16T09:00:00+00:00",
-        "recordedDate": "2016-01-16"
+        "onsetDateTime": "2022-01-09T09:00:00+00:00",
+        "recordedDate": "2022-01-09"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-005-ckd",
+        "id": "cond-005-htn",
         "clinicalStatus": {
           "coding": [
             {
@@ -2145,17 +2077,17 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "709044004",
-              "display": "Chronic kidney disease"
+              "code": "38341003",
+              "display": "Hypertensive disorder, systemic arterial"
             }
           ],
-          "text": "Chronic kidney disease"
+          "text": "Hypertensive disorder, systemic arterial"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "onsetDateTime": "2020-07-05T09:00:00+00:00",
-        "recordedDate": "2020-07-05"
+        "onsetDateTime": "2018-07-13T09:00:00+00:00",
+        "recordedDate": "2018-07-13"
       }
     },
     {
@@ -2195,8 +2127,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "onsetDateTime": "2021-12-01T09:00:00+00:00",
-        "recordedDate": "2021-12-01"
+        "onsetDateTime": "2020-12-24T09:00:00+00:00",
+        "recordedDate": "2020-12-24"
       }
     },
     {
@@ -2229,9 +2161,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "effectiveDateTime": "2024-01-15T09:00:00+00:00",
+        "effectiveDateTime": "2024-01-25T09:00:00+00:00",
         "valueQuantity": {
-          "value": 6.8,
+          "value": 10.2,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -2268,9 +2200,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "effectiveDateTime": "2024-03-26T09:00:00+00:00",
+        "effectiveDateTime": "2024-03-19T09:00:00+00:00",
         "valueQuantity": {
-          "value": 86.8,
+          "value": 90.7,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -2307,9 +2239,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "effectiveDateTime": "2023-12-20T09:00:00+00:00",
+        "effectiveDateTime": "2023-08-16T09:00:00+00:00",
         "valueQuantity": {
-          "value": 171.2,
+          "value": 78.6,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -2346,9 +2278,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "effectiveDateTime": "2024-03-26T09:00:00+00:00",
+        "effectiveDateTime": "2024-03-19T09:00:00+00:00",
         "valueQuantity": {
-          "value": 0.96,
+          "value": 0.9,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -2385,9 +2317,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "effectiveDateTime": "2023-06-12T09:00:00+00:00",
+        "effectiveDateTime": "2023-07-21T09:00:00+00:00",
         "valueQuantity": {
-          "value": 126,
+          "value": 172,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -2424,13 +2356,57 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "effectiveDateTime": "2023-06-12T09:00:00+00:00",
+        "effectiveDateTime": "2023-07-21T09:00:00+00:00",
         "valueQuantity": {
-          "value": 95,
+          "value": 74,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
         }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-005-metformin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "Metformin hydrochloride 500 MG Oral Tablet"
+            }
+          ],
+          "text": "Metformin hydrochloride 500 MG Oral Tablet"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-005"
+        },
+        "authoredOn": "2023-09-08"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-005-insulin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "311041",
+              "display": "Insulin glargine 100 UNT/ML Injectable Solution"
+            }
+          ],
+          "text": "Insulin glargine 100 UNT/ML Injectable Solution"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-005"
+        },
+        "authoredOn": "2024-02-04"
       }
     },
     {
@@ -2452,29 +2428,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "authoredOn": "2023-02-28"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "med-005-atorvastatin",
-        "status": "active",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "617312",
-              "display": "Atorvastatin 20 MG Oral Tablet"
-            }
-          ],
-          "text": "Atorvastatin 20 MG Oral Tablet"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-005"
-        },
-        "authoredOn": "2023-05-08"
+        "authoredOn": "2023-01-04"
       }
     },
     {
@@ -2503,70 +2457,8 @@
           "reference": "Patient/synthetic-patient-005"
         },
         "period": {
-          "start": "2023-05-27T09:00:00+00:00",
-          "end": "2023-05-27T10:00:00+00:00"
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "enc-005-1",
-        "status": "finished",
-        "class": {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-          "code": "AMB",
-          "display": "ambulatory"
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "185349003",
-                "display": "Encounter for check up"
-              }
-            ],
-            "text": "Encounter for check up"
-          }
-        ],
-        "subject": {
-          "reference": "Patient/synthetic-patient-005"
-        },
-        "period": {
-          "start": "2023-04-10T09:00:00+00:00",
-          "end": "2023-04-10T10:00:00+00:00"
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "enc-005-2",
-        "status": "finished",
-        "class": {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-          "code": "AMB",
-          "display": "ambulatory"
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "185349003",
-                "display": "Encounter for check up"
-              }
-            ],
-            "text": "Encounter for check up"
-          }
-        ],
-        "subject": {
-          "reference": "Patient/synthetic-patient-005"
-        },
-        "period": {
-          "start": "2023-11-17T09:00:00+00:00",
-          "end": "2023-11-17T10:00:00+00:00"
+          "start": "2023-12-04T09:00:00+00:00",
+          "end": "2023-12-04T10:00:00+00:00"
         }
       }
     },
@@ -2588,7 +2480,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-005"
         },
-        "performedDateTime": "2023-01-17T09:00:00+00:00"
+        "performedDateTime": "2024-03-11T09:00:00+00:00"
       }
     },
     {
@@ -2596,17 +2488,8 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-006",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "Echo",
-            "given": [
-              "Demo"
-            ]
-          }
-        ],
         "gender": "female",
-        "birthDate": "1945-04-04"
+        "birthDate": "1954-11-14"
       }
     },
     {
@@ -2646,131 +2529,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-006"
         },
-        "onsetDateTime": "2017-02-22T09:00:00+00:00",
-        "recordedDate": "2017-02-22"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-006-htn",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ],
-          "text": "Active"
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed",
-              "display": "Confirmed"
-            }
-          ],
-          "text": "Confirmed"
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "38341003",
-              "display": "Hypertensive disorder, systemic arterial"
-            }
-          ],
-          "text": "Hypertensive disorder, systemic arterial"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-006"
-        },
-        "onsetDateTime": "2020-10-06T09:00:00+00:00",
-        "recordedDate": "2020-10-06"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-006-ckd",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ],
-          "text": "Active"
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed",
-              "display": "Confirmed"
-            }
-          ],
-          "text": "Confirmed"
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "709044004",
-              "display": "Chronic kidney disease"
-            }
-          ],
-          "text": "Chronic kidney disease"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-006"
-        },
-        "onsetDateTime": "2020-12-21T09:00:00+00:00",
-        "recordedDate": "2020-12-21"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Condition",
-        "id": "cond-006-neuro",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active"
-            }
-          ],
-          "text": "Active"
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed",
-              "display": "Confirmed"
-            }
-          ],
-          "text": "Confirmed"
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "42345005",
-              "display": "Diabetic neuropathy"
-            }
-          ],
-          "text": "Diabetic neuropathy"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-006"
-        },
-        "onsetDateTime": "2021-04-22T09:00:00+00:00",
-        "recordedDate": "2021-04-22"
+        "onsetDateTime": "2019-04-19T09:00:00+00:00",
+        "recordedDate": "2019-04-19"
       }
     },
     {
@@ -2803,9 +2563,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-006"
         },
-        "effectiveDateTime": "2023-06-28T09:00:00+00:00",
+        "effectiveDateTime": "2024-02-11T09:00:00+00:00",
         "valueQuantity": {
-          "value": 6.2,
+          "value": 6.1,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -2842,9 +2602,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-006"
         },
-        "effectiveDateTime": "2023-10-30T09:00:00+00:00",
+        "effectiveDateTime": "2023-10-05T09:00:00+00:00",
         "valueQuantity": {
-          "value": 63.6,
+          "value": 81.2,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -2881,9 +2641,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-006"
         },
-        "effectiveDateTime": "2023-07-16T09:00:00+00:00",
+        "effectiveDateTime": "2023-09-21T09:00:00+00:00",
         "valueQuantity": {
-          "value": 117.0,
+          "value": 73.8,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -2920,9 +2680,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-006"
         },
-        "effectiveDateTime": "2023-10-30T09:00:00+00:00",
+        "effectiveDateTime": "2023-10-05T09:00:00+00:00",
         "valueQuantity": {
-          "value": 1.43,
+          "value": 1.08,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -2959,9 +2719,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-006"
         },
-        "effectiveDateTime": "2024-02-29T09:00:00+00:00",
+        "effectiveDateTime": "2024-01-02T09:00:00+00:00",
         "valueQuantity": {
-          "value": 136,
+          "value": 127,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -2998,9 +2758,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-006"
         },
-        "effectiveDateTime": "2024-02-29T09:00:00+00:00",
+        "effectiveDateTime": "2024-01-02T09:00:00+00:00",
         "valueQuantity": {
-          "value": 80,
+          "value": 89,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -3010,67 +2770,23 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "med-006-metformin",
+        "id": "med-006-insulin",
         "status": "active",
         "intent": "order",
         "medicationCodeableConcept": {
           "coding": [
             {
               "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "860975",
-              "display": "Metformin hydrochloride 500 MG Oral Tablet"
+              "code": "311041",
+              "display": "Insulin glargine 100 UNT/ML Injectable Solution"
             }
           ],
-          "text": "Metformin hydrochloride 500 MG Oral Tablet"
+          "text": "Insulin glargine 100 UNT/ML Injectable Solution"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-006"
         },
-        "authoredOn": "2022-12-09"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "med-006-lisinopril",
-        "status": "active",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "314076",
-              "display": "Lisinopril 10 MG Oral Tablet"
-            }
-          ],
-          "text": "Lisinopril 10 MG Oral Tablet"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-006"
-        },
-        "authoredOn": "2023-12-12"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "med-006-atorvastatin",
-        "status": "active",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "617312",
-              "display": "Atorvastatin 20 MG Oral Tablet"
-            }
-          ],
-          "text": "Atorvastatin 20 MG Oral Tablet"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-006"
-        },
-        "authoredOn": "2023-09-26"
+        "authoredOn": "2023-08-12"
       }
     },
     {
@@ -3099,8 +2815,8 @@
           "reference": "Patient/synthetic-patient-006"
         },
         "period": {
-          "start": "2022-09-20T09:00:00+00:00",
-          "end": "2022-09-20T10:00:00+00:00"
+          "start": "2024-02-10T09:00:00+00:00",
+          "end": "2024-02-10T10:00:00+00:00"
         }
       }
     },
@@ -3130,8 +2846,8 @@
           "reference": "Patient/synthetic-patient-006"
         },
         "period": {
-          "start": "2023-04-09T09:00:00+00:00",
-          "end": "2023-04-09T10:00:00+00:00"
+          "start": "2022-12-16T09:00:00+00:00",
+          "end": "2022-12-16T10:00:00+00:00"
         }
       }
     },
@@ -3161,9 +2877,30 @@
           "reference": "Patient/synthetic-patient-006"
         },
         "period": {
-          "start": "2023-08-04T09:00:00+00:00",
-          "end": "2023-08-04T10:00:00+00:00"
+          "start": "2022-08-17T09:00:00+00:00",
+          "end": "2022-08-17T10:00:00+00:00"
         }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-006-eye",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "252779009",
+              "display": "Single bright stimulus electroretinography"
+            }
+          ],
+          "text": "Single bright stimulus electroretinography"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-006"
+        },
+        "performedDateTime": "2023-03-08T09:00:00+00:00"
       }
     },
     {
@@ -3171,17 +2908,8 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-007",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "Delta",
-            "given": [
-              "Mock"
-            ]
-          }
-        ],
-        "gender": "female",
-        "birthDate": "1966-02-07"
+        "gender": "male",
+        "birthDate": "1968-08-19"
       }
     },
     {
@@ -3221,14 +2949,14 @@
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "onsetDateTime": "2018-11-13T09:00:00+00:00",
-        "recordedDate": "2018-11-13"
+        "onsetDateTime": "2014-05-07T09:00:00+00:00",
+        "recordedDate": "2014-05-07"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-007-neuro",
+        "id": "cond-007-htn",
         "clinicalStatus": {
           "coding": [
             {
@@ -3253,17 +2981,58 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "42345005",
-              "display": "Diabetic neuropathy"
+              "code": "38341003",
+              "display": "Hypertensive disorder, systemic arterial"
             }
           ],
-          "text": "Diabetic neuropathy"
+          "text": "Hypertensive disorder, systemic arterial"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "onsetDateTime": "2021-11-07T09:00:00+00:00",
-        "recordedDate": "2021-11-07"
+        "onsetDateTime": "2020-06-10T09:00:00+00:00",
+        "recordedDate": "2020-06-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-007-ckd",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ],
+          "text": "Confirmed"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "709044004",
+              "display": "Chronic kidney disease"
+            }
+          ],
+          "text": "Chronic kidney disease"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-007"
+        },
+        "onsetDateTime": "2019-05-23T09:00:00+00:00",
+        "recordedDate": "2019-05-23"
       }
     },
     {
@@ -3296,9 +3065,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "effectiveDateTime": "2023-12-22T09:00:00+00:00",
+        "effectiveDateTime": "2024-03-02T09:00:00+00:00",
         "valueQuantity": {
-          "value": 9.3,
+          "value": 7.5,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -3335,9 +3104,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "effectiveDateTime": "2023-04-14T09:00:00+00:00",
+        "effectiveDateTime": "2024-01-24T09:00:00+00:00",
         "valueQuantity": {
-          "value": 57.6,
+          "value": 82.4,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -3374,9 +3143,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "effectiveDateTime": "2023-09-05T09:00:00+00:00",
+        "effectiveDateTime": "2023-04-04T09:00:00+00:00",
         "valueQuantity": {
-          "value": 77.8,
+          "value": 96.5,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -3413,9 +3182,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "effectiveDateTime": "2023-04-14T09:00:00+00:00",
+        "effectiveDateTime": "2024-01-24T09:00:00+00:00",
         "valueQuantity": {
-          "value": 1.55,
+          "value": 1.05,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -3452,9 +3221,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "effectiveDateTime": "2024-03-31T09:00:00+00:00",
+        "effectiveDateTime": "2023-07-18T09:00:00+00:00",
         "valueQuantity": {
-          "value": 133,
+          "value": 166,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -3491,9 +3260,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "effectiveDateTime": "2024-03-31T09:00:00+00:00",
+        "effectiveDateTime": "2023-07-18T09:00:00+00:00",
         "valueQuantity": {
-          "value": 72,
+          "value": 81,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -3519,29 +3288,29 @@
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "authoredOn": "2023-08-06"
+        "authoredOn": "2023-10-17"
       }
     },
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "med-007-insulin",
+        "id": "med-007-lisinopril",
         "status": "active",
         "intent": "order",
         "medicationCodeableConcept": {
           "coding": [
             {
               "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "311041",
-              "display": "Insulin glargine 100 UNT/ML Injectable Solution"
+              "code": "314076",
+              "display": "Lisinopril 10 MG Oral Tablet"
             }
           ],
-          "text": "Insulin glargine 100 UNT/ML Injectable Solution"
+          "text": "Lisinopril 10 MG Oral Tablet"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "authoredOn": "2023-11-26"
+        "authoredOn": "2023-03-23"
       }
     },
     {
@@ -3570,30 +3339,40 @@
           "reference": "Patient/synthetic-patient-007"
         },
         "period": {
-          "start": "2023-11-16T09:00:00+00:00",
-          "end": "2023-11-16T10:00:00+00:00"
+          "start": "2023-12-27T09:00:00+00:00",
+          "end": "2023-12-27T10:00:00+00:00"
         }
       }
     },
     {
       "resource": {
-        "resourceType": "Procedure",
-        "id": "proc-007-eye",
-        "status": "completed",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "252779009",
-              "display": "Single bright stimulus electroretinography"
-            }
-          ],
-          "text": "Single bright stimulus electroretinography"
+        "resourceType": "Encounter",
+        "id": "enc-007-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
         },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Encounter for check up"
+              }
+            ],
+            "text": "Encounter for check up"
+          }
+        ],
         "subject": {
           "reference": "Patient/synthetic-patient-007"
         },
-        "performedDateTime": "2024-03-15T09:00:00+00:00"
+        "period": {
+          "start": "2024-04-28T09:00:00+00:00",
+          "end": "2024-04-28T10:00:00+00:00"
+        }
       }
     },
     {
@@ -3601,17 +3380,8 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-008",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "Golf",
-            "given": [
-              "Sample"
-            ]
-          }
-        ],
         "gender": "female",
-        "birthDate": "1959-08-10"
+        "birthDate": "1969-10-07"
       }
     },
     {
@@ -3651,8 +3421,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "onsetDateTime": "2018-03-20T09:00:00+00:00",
-        "recordedDate": "2018-03-20"
+        "onsetDateTime": "2014-09-08T09:00:00+00:00",
+        "recordedDate": "2014-09-08"
       }
     },
     {
@@ -3692,14 +3462,14 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "onsetDateTime": "2019-04-03T09:00:00+00:00",
-        "recordedDate": "2019-04-03"
+        "onsetDateTime": "2020-11-07T09:00:00+00:00",
+        "recordedDate": "2020-11-07"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-008-neuro",
+        "id": "cond-008-ckd",
         "clinicalStatus": {
           "coding": [
             {
@@ -3724,17 +3494,17 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "42345005",
-              "display": "Diabetic neuropathy"
+              "code": "709044004",
+              "display": "Chronic kidney disease"
             }
           ],
-          "text": "Diabetic neuropathy"
+          "text": "Chronic kidney disease"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "onsetDateTime": "2021-05-20T09:00:00+00:00",
-        "recordedDate": "2021-05-20"
+        "onsetDateTime": "2023-04-19T09:00:00+00:00",
+        "recordedDate": "2023-04-19"
       }
     },
     {
@@ -3767,9 +3537,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "effectiveDateTime": "2023-02-07T09:00:00+00:00",
+        "effectiveDateTime": "2023-12-29T09:00:00+00:00",
         "valueQuantity": {
-          "value": 6.2,
+          "value": 7.6,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -3806,9 +3576,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "effectiveDateTime": "2024-04-10T09:00:00+00:00",
+        "effectiveDateTime": "2023-05-17T09:00:00+00:00",
         "valueQuantity": {
-          "value": 83.2,
+          "value": 36.9,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -3845,9 +3615,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "effectiveDateTime": "2022-11-18T09:00:00+00:00",
+        "effectiveDateTime": "2024-03-11T09:00:00+00:00",
         "valueQuantity": {
-          "value": 80.6,
+          "value": 170.0,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -3884,9 +3654,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "effectiveDateTime": "2024-04-10T09:00:00+00:00",
+        "effectiveDateTime": "2023-05-17T09:00:00+00:00",
         "valueQuantity": {
-          "value": 1.04,
+          "value": 1.96,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -3923,9 +3693,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "effectiveDateTime": "2023-07-12T09:00:00+00:00",
+        "effectiveDateTime": "2023-12-31T09:00:00+00:00",
         "valueQuantity": {
-          "value": 157,
+          "value": 145,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -3962,13 +3732,35 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "effectiveDateTime": "2023-07-12T09:00:00+00:00",
+        "effectiveDateTime": "2023-12-31T09:00:00+00:00",
         "valueQuantity": {
-          "value": 89,
+          "value": 84,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
         }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-008-metformin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "Metformin hydrochloride 500 MG Oral Tablet"
+            }
+          ],
+          "text": "Metformin hydrochloride 500 MG Oral Tablet"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-008"
+        },
+        "authoredOn": "2023-04-07"
       }
     },
     {
@@ -3990,7 +3782,29 @@
         "subject": {
           "reference": "Patient/synthetic-patient-008"
         },
-        "authoredOn": "2022-12-29"
+        "authoredOn": "2022-11-08"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-008-atorvastatin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617312",
+              "display": "Atorvastatin 20 MG Oral Tablet"
+            }
+          ],
+          "text": "Atorvastatin 20 MG Oral Tablet"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-008"
+        },
+        "authoredOn": "2023-11-13"
       }
     },
     {
@@ -4019,8 +3833,8 @@
           "reference": "Patient/synthetic-patient-008"
         },
         "period": {
-          "start": "2023-02-18T09:00:00+00:00",
-          "end": "2023-02-18T10:00:00+00:00"
+          "start": "2022-12-30T09:00:00+00:00",
+          "end": "2022-12-30T10:00:00+00:00"
         }
       }
     },
@@ -4050,39 +3864,8 @@
           "reference": "Patient/synthetic-patient-008"
         },
         "period": {
-          "start": "2023-02-28T09:00:00+00:00",
-          "end": "2023-02-28T10:00:00+00:00"
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "enc-008-2",
-        "status": "finished",
-        "class": {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-          "code": "AMB",
-          "display": "ambulatory"
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "185349003",
-                "display": "Encounter for check up"
-              }
-            ],
-            "text": "Encounter for check up"
-          }
-        ],
-        "subject": {
-          "reference": "Patient/synthetic-patient-008"
-        },
-        "period": {
-          "start": "2023-03-23T09:00:00+00:00",
-          "end": "2023-03-23T10:00:00+00:00"
+          "start": "2024-03-03T09:00:00+00:00",
+          "end": "2024-03-03T10:00:00+00:00"
         }
       }
     },
@@ -4091,17 +3874,8 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-009",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "Juliet",
-            "given": [
-              "Synth"
-            ]
-          }
-        ],
         "gender": "male",
-        "birthDate": "1966-03-16"
+        "birthDate": "1953-03-05"
       }
     },
     {
@@ -4141,8 +3915,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "onsetDateTime": "2022-11-15T09:00:00+00:00",
-        "recordedDate": "2022-11-15"
+        "onsetDateTime": "2016-05-29T09:00:00+00:00",
+        "recordedDate": "2016-05-29"
       }
     },
     {
@@ -4182,8 +3956,8 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "onsetDateTime": "2019-04-16T09:00:00+00:00",
-        "recordedDate": "2019-04-16"
+        "onsetDateTime": "2019-11-18T09:00:00+00:00",
+        "recordedDate": "2019-11-18"
       }
     },
     {
@@ -4216,9 +3990,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "effectiveDateTime": "2023-10-06T09:00:00+00:00",
+        "effectiveDateTime": "2023-08-15T09:00:00+00:00",
         "valueQuantity": {
-          "value": 8.9,
+          "value": 8.3,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -4255,9 +4029,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "effectiveDateTime": "2023-10-26T09:00:00+00:00",
+        "effectiveDateTime": "2023-02-15T09:00:00+00:00",
         "valueQuantity": {
-          "value": 67.0,
+          "value": 102.2,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -4294,9 +4068,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "effectiveDateTime": "2023-07-23T09:00:00+00:00",
+        "effectiveDateTime": "2024-02-17T09:00:00+00:00",
         "valueQuantity": {
-          "value": 128.8,
+          "value": 148.7,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -4333,9 +4107,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "effectiveDateTime": "2023-10-26T09:00:00+00:00",
+        "effectiveDateTime": "2023-02-15T09:00:00+00:00",
         "valueQuantity": {
-          "value": 1.36,
+          "value": 0.9,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -4372,9 +4146,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "effectiveDateTime": "2023-09-15T09:00:00+00:00",
+        "effectiveDateTime": "2023-12-09T09:00:00+00:00",
         "valueQuantity": {
-          "value": 154,
+          "value": 129,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -4411,13 +4185,35 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "effectiveDateTime": "2023-09-15T09:00:00+00:00",
+        "effectiveDateTime": "2023-12-09T09:00:00+00:00",
         "valueQuantity": {
-          "value": 100,
+          "value": 99,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
         }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-009-metformin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "Metformin hydrochloride 500 MG Oral Tablet"
+            }
+          ],
+          "text": "Metformin hydrochloride 500 MG Oral Tablet"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-009"
+        },
+        "authoredOn": "2022-09-23"
       }
     },
     {
@@ -4439,7 +4235,7 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "authoredOn": "2024-04-24"
+        "authoredOn": "2023-03-26"
       }
     },
     {
@@ -4461,7 +4257,29 @@
         "subject": {
           "reference": "Patient/synthetic-patient-009"
         },
-        "authoredOn": "2023-03-25"
+        "authoredOn": "2023-04-05"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-009-atorvastatin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617312",
+              "display": "Atorvastatin 20 MG Oral Tablet"
+            }
+          ],
+          "text": "Atorvastatin 20 MG Oral Tablet"
+        },
+        "subject": {
+          "reference": "Patient/synthetic-patient-009"
+        },
+        "authoredOn": "2023-01-14"
       }
     },
     {
@@ -4490,8 +4308,8 @@
           "reference": "Patient/synthetic-patient-009"
         },
         "period": {
-          "start": "2022-09-26T09:00:00+00:00",
-          "end": "2022-09-26T10:00:00+00:00"
+          "start": "2022-10-03T09:00:00+00:00",
+          "end": "2022-10-03T10:00:00+00:00"
         }
       }
     },
@@ -4521,61 +4339,9 @@
           "reference": "Patient/synthetic-patient-009"
         },
         "period": {
-          "start": "2022-12-26T09:00:00+00:00",
-          "end": "2022-12-26T10:00:00+00:00"
+          "start": "2023-03-06T09:00:00+00:00",
+          "end": "2023-03-06T10:00:00+00:00"
         }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "enc-009-2",
-        "status": "finished",
-        "class": {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-          "code": "AMB",
-          "display": "ambulatory"
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "185349003",
-                "display": "Encounter for check up"
-              }
-            ],
-            "text": "Encounter for check up"
-          }
-        ],
-        "subject": {
-          "reference": "Patient/synthetic-patient-009"
-        },
-        "period": {
-          "start": "2022-09-21T09:00:00+00:00",
-          "end": "2022-09-21T10:00:00+00:00"
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Procedure",
-        "id": "proc-009-eye",
-        "status": "completed",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "252779009",
-              "display": "Single bright stimulus electroretinography"
-            }
-          ],
-          "text": "Single bright stimulus electroretinography"
-        },
-        "subject": {
-          "reference": "Patient/synthetic-patient-009"
-        },
-        "performedDateTime": "2021-12-29T09:00:00+00:00"
       }
     },
     {
@@ -4583,17 +4349,8 @@
         "resourceType": "Patient",
         "id": "synthetic-patient-010",
         "active": true,
-        "name": [
-          {
-            "use": "official",
-            "family": "November",
-            "given": [
-              "Fixture"
-            ]
-          }
-        ],
         "gender": "female",
-        "birthDate": "1964-12-17"
+        "birthDate": "1973-07-10"
       }
     },
     {
@@ -4633,14 +4390,14 @@
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "onsetDateTime": "2014-08-29T09:00:00+00:00",
-        "recordedDate": "2014-08-29"
+        "onsetDateTime": "2017-05-22T09:00:00+00:00",
+        "recordedDate": "2017-05-22"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "cond-010-htn",
+        "id": "cond-010-neuro",
         "clinicalStatus": {
           "coding": [
             {
@@ -4665,17 +4422,17 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "38341003",
-              "display": "Hypertensive disorder, systemic arterial"
+              "code": "42345005",
+              "display": "Diabetic neuropathy"
             }
           ],
-          "text": "Hypertensive disorder, systemic arterial"
+          "text": "Diabetic neuropathy"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "onsetDateTime": "2016-06-18T09:00:00+00:00",
-        "recordedDate": "2016-06-18"
+        "onsetDateTime": "2024-01-18T09:00:00+00:00",
+        "recordedDate": "2024-01-18"
       }
     },
     {
@@ -4708,9 +4465,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "effectiveDateTime": "2024-02-06T09:00:00+00:00",
+        "effectiveDateTime": "2023-06-06T09:00:00+00:00",
         "valueQuantity": {
-          "value": 6.5,
+          "value": 9.2,
           "unit": "%",
           "system": "http://unitsofmeasure.org",
           "code": "%"
@@ -4747,9 +4504,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "effectiveDateTime": "2023-09-06T09:00:00+00:00",
+        "effectiveDateTime": "2023-02-26T09:00:00+00:00",
         "valueQuantity": {
-          "value": 78.4,
+          "value": 76.7,
           "unit": "mL/min/1.73m2",
           "system": "http://unitsofmeasure.org",
           "code": "mL/min/1.73m2"
@@ -4786,9 +4543,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "effectiveDateTime": "2022-12-31T09:00:00+00:00",
+        "effectiveDateTime": "2022-12-21T09:00:00+00:00",
         "valueQuantity": {
-          "value": 144.0,
+          "value": 136.8,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -4825,9 +4582,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "effectiveDateTime": "2023-09-06T09:00:00+00:00",
+        "effectiveDateTime": "2023-02-26T09:00:00+00:00",
         "valueQuantity": {
-          "value": 1.13,
+          "value": 1.17,
           "unit": "mg/dL",
           "system": "http://unitsofmeasure.org",
           "code": "mg/dL"
@@ -4864,9 +4621,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "effectiveDateTime": "2023-07-22T09:00:00+00:00",
+        "effectiveDateTime": "2023-09-25T09:00:00+00:00",
         "valueQuantity": {
-          "value": 170,
+          "value": 135,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -4903,9 +4660,9 @@
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "effectiveDateTime": "2023-07-22T09:00:00+00:00",
+        "effectiveDateTime": "2023-09-25T09:00:00+00:00",
         "valueQuantity": {
-          "value": 78,
+          "value": 83,
           "unit": "mmHg",
           "system": "http://unitsofmeasure.org",
           "code": "mmHg"
@@ -4931,29 +4688,29 @@
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "authoredOn": "2023-06-03"
+        "authoredOn": "2022-12-04"
       }
     },
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "med-010-lisinopril",
+        "id": "med-010-insulin",
         "status": "active",
         "intent": "order",
         "medicationCodeableConcept": {
           "coding": [
             {
               "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "314076",
-              "display": "Lisinopril 10 MG Oral Tablet"
+              "code": "311041",
+              "display": "Insulin glargine 100 UNT/ML Injectable Solution"
             }
           ],
-          "text": "Lisinopril 10 MG Oral Tablet"
+          "text": "Insulin glargine 100 UNT/ML Injectable Solution"
         },
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "authoredOn": "2023-11-11"
+        "authoredOn": "2023-03-01"
       }
     },
     {
@@ -4982,30 +4739,40 @@
           "reference": "Patient/synthetic-patient-010"
         },
         "period": {
-          "start": "2023-02-27T09:00:00+00:00",
-          "end": "2023-02-27T10:00:00+00:00"
+          "start": "2024-05-09T09:00:00+00:00",
+          "end": "2024-05-09T10:00:00+00:00"
         }
       }
     },
     {
       "resource": {
-        "resourceType": "Procedure",
-        "id": "proc-010-eye",
-        "status": "completed",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "252779009",
-              "display": "Single bright stimulus electroretinography"
-            }
-          ],
-          "text": "Single bright stimulus electroretinography"
+        "resourceType": "Encounter",
+        "id": "enc-010-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
         },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Encounter for check up"
+              }
+            ],
+            "text": "Encounter for check up"
+          }
+        ],
         "subject": {
           "reference": "Patient/synthetic-patient-010"
         },
-        "performedDateTime": "2023-12-25T09:00:00+00:00"
+        "period": {
+          "start": "2022-08-05T09:00:00+00:00",
+          "end": "2022-08-05T10:00:00+00:00"
+        }
       }
     }
   ]
